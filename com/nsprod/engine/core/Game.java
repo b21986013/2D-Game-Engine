@@ -10,9 +10,8 @@ public abstract class Game extends Canvas implements Runnable
     private Thread thread;
     
     public Game(int w, int h, String title){ 
-        // Creates new window and adds "this runnable to window"
         new Window(w, h, title, this);
-        // start game thread.
+        
         start();
     }
 

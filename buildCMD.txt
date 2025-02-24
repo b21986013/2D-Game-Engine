@@ -1,6 +1,6 @@
 // -d out → Places compiled classes in the out directory.
-javac -d out com/nsprod/engine/core/*.java
-javac -d out com/nsprod/engine/helper/*.java
+javac -parameters -d out com/nsprod/engine/core/*.java
+javac -parameters -d out com/nsprod/engine/helpers/*.java
 
 // -C out . → Adds everything inside out to the JAR.
 jar cvf 2DGameEngine.jar -C out .

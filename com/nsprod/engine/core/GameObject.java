@@ -9,6 +9,17 @@ public abstract class GameObject {
     protected int x, y, velX, velY, width, height;
     protected ID id;
 
+    public GameObject(ID id)
+    {
+        this.id = id;
+    }
+
+    public GameObject(int x, int y, ID id)
+    {
+        this.x = x;
+        this.y = y;
+    }
+
     public GameObject(int x, int y, int width, int height, ID id)
     {
         this.x = x;
@@ -25,5 +36,27 @@ public abstract class GameObject {
     public Rectangle getBounds()
     {
         return new Rectangle(x, y, width, height);
+    }
+
+    public void setPosition(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+
+    public void setVelocity(int velX, int velY)
+    {
+        this.velX = velX;
+        this.velY = velY;
+    }
+
+    public void setSize(int width, int height)
+    {
+        this.width = width;
+        this.height = height;
+    }
+
+    public ID getID() {
+        return id;
     }
 }
