@@ -2,25 +2,25 @@ package com.nsprod.engine.core;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
-
-import com.nsprod.engine.helpers.ID;
-
+ 
 public abstract class GameObject {
-    protected int x, y, velX, velY, width, height;
-    protected ID id;
+    protected float x, y, velX, velY;
+    protected int width, height;
+    protected String id;
 
-    public GameObject(ID id)
+    public GameObject(String id)
     {
         this.id = id;
     }
 
-    public GameObject(int x, int y, ID id)
+    public GameObject(float x, float y, String id)
     {
         this.x = x;
         this.y = y;
+        this.id = id;
     }
 
-    public GameObject(int x, int y, int width, int height, ID id)
+    public GameObject(float x, float y, int width, int height, String id)
     {
         this.x = x;
         this.y = y;
@@ -35,16 +35,16 @@ public abstract class GameObject {
 
     public Rectangle getBounds()
     {
-        return new Rectangle(x, y, width, height);
+        return new Rectangle((int)x,(int) y, width, height);
     }
 
-    public void setPosition(int x, int y)
+    public void setPosition(float x, float y)
     {
         this.x = x;
         this.y = y;
     }
 
-    public void setVelocity(int velX, int velY)
+    public void setVelocity(float velX, float velY)
     {
         this.velX = velX;
         this.velY = velY;
@@ -56,7 +56,7 @@ public abstract class GameObject {
         this.height = height;
     }
 
-    public ID getID() {
+    public String getID() {
         return id;
     }
 }
