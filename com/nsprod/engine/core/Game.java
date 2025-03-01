@@ -8,9 +8,10 @@ public abstract class Game extends Canvas implements Runnable
 { 
     private boolean running;
     private Thread thread;
+    private Window window;
     
     public Game(int w, int h, String title){ 
-        new Window(w, h, title, this);
+        window = new Window(w, h, title, this);
         
         start();
     }
@@ -85,5 +86,10 @@ public abstract class Game extends Canvas implements Runnable
 
         g.dispose();
         bs.show();
+    }
+
+    public Window getWindow()
+    {
+        return window;
     }
 }
